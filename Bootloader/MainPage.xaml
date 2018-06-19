@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Bootloader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bootloader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <MenuFlyout x:Key="DeviceList" Placement="Top">
+
+        </MenuFlyout>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Name="Scroll">
+            <TextBlock HorizontalAlignment="Left" Margin="10,75,10,10" Name="Output" TextWrapping="Wrap" VerticalAlignment="Bottom" Text=""/>
+        </ScrollViewer>
+        <CommandBar>
+            <AppBarToggleButton Name="Scan" Icon="Find" Label="Scan" Click="Scan_Click"/>
+            <AppBarButton Name="Devices" Icon="Filter" Label="Found Devices" IsEnabled="False" Click="Device_Click" FlyoutBase.AttachedFlyout="{StaticResource DeviceList}" />
+            <AppBarSeparator/>
+            <AppBarButton Icon="OpenFile" Name="Open" Label="Select" IsEnabled="False" Click="Select_Click"/>
+            <AppBarButton Icon="Upload" Name="Upload" Label="Upload Firmware" IsEnabled="False" Click="Upload_Click"/>
+
+            <CommandBar.Content>
+                <TextBlock Text="" Name="StatusUpdate" Margin="12,14"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Grid>
+    
+</Page>
